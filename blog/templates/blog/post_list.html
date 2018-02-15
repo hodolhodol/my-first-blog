@@ -7,18 +7,12 @@
     <div>
       <h1> <a href="">Django Girls Blog </a> </h1>
     </div>
-
-    <div>
-      <p> published: 15.02.2018 </p>
-      <h2> <a href="">My first post</h2>
-      <p> 뭐라는 거야, 무슨말인지 모르겠다. 스페인어인가?</p>
-    </div>
-
-    <div>
-      <p> published: 15.02.2018 </p>
-      <h2> <a href="">My second post</h2>
-      <p> 뭐라는 거야, 무슨말인지 모르겠다. 스페인어인가?</p>
-    </div>
-    
+    {% for post in posts %}
+      <div>
+        <p> published: {{post.published_date}} </p>
+        <h2> <a href="">{{post.title}}</h2>
+        <p> {{post.text|linebreaksbr}}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
